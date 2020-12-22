@@ -2,10 +2,20 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "name": "mytimer",
-      "type": "timerTrigger",
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
       "direction": "in",
-      "schedule": "0 0 0 * * *"
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "daily_trigger"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
     }
   ]
 }
